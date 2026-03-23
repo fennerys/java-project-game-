@@ -2,8 +2,17 @@ import java.util.Scanner;
 
 public abstract class Player extends Combatant
 {
-    private List<item> items;
+    private item[] items;
     private int specialCooldown;
+    private static final int MAX_ITEMS = 10;
+
+    public Player(String name, int maxHP, int HP, int ATK, int DEF, int SPD)
+    {
+        super(name, maxHP, HP, ATK, DEF, SPD);
+        //capping the number of items a player can hold to 10
+        items = new item[MAX_ITEMS];
+        specialCooldown = 0;
+    }
 
     public void chooseAction()
     {
@@ -27,18 +36,22 @@ public abstract class Player extends Combatant
             case 1:
             {
                 this.basicAttack();
+                break;
             }
             case 2:
             {
                 this.specialAttack();
+                break;
             }
             case 3:
             {
                 this.defend();
+                break;
             }
             case 4:
             {
                 this.useItem();
+                break;
             }
         }
     }
