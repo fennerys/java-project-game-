@@ -3,15 +3,16 @@ import java.util.Scanner;
 public abstract class Player extends Combatant
 {
     private item[] items;
-    private int specialCooldown;
+    private int special_cooldown;
     private static final int MAX_ITEMS = 10;
+    private List<Enemy> enemies;
 
     public Player(String name, int maxHP, int HP, int ATK, int DEF, int SPD)
     {
         super(name, maxHP, HP, ATK, DEF, SPD);
         //capping the number of items a player can hold to 10
         items = new item[MAX_ITEMS];
-        specialCooldown = 0;
+        special_cooldown = 0;
     }
 
     public void chooseAction()
@@ -28,19 +29,19 @@ public abstract class Player extends Combatant
         System.out.println("Please input a number 1-4: ");
 
         //getting user input
-        int userinput = scan.nextInt();
+        int user_input = scan.nextInt();
 
         //activating the correct methods
-        switch (userinput)
+        switch (user_input)
         {
             case 1:
             {
-                this.basicAttack();
+                this.basic_attack();
                 break;
             }
             case 2:
             {
-                this.specialAttack();
+                this.special_attack();
                 break;
             }
             case 3:
@@ -50,15 +51,16 @@ public abstract class Player extends Combatant
             }
             case 4:
             {
-                this.useItem();
+                //not too sure how to use an item
+                this.use_item();
                 break;
             }
         }
     }
 
     //methods to be implemented by wizard and warrior class later
-    abstract void specialAttack();
-    abstract void basicAttack();
+    abstract void special_attack();
+    abstract void basic_attack(List<Enemy> enemies);
 
     public void defend()
     {
