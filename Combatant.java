@@ -1,9 +1,9 @@
 public abstract class Combatant
 {
     protected String name;
-    protected int HP;
-    protected int DEF;
-    protected int SPD;
+    protected int maxHp;
+    protected int defense;
+    protected int peed;
     protected List<StatusEffect> StatusEffect;
 
     public void takeDamage (int dmg)
