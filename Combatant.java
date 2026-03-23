@@ -3,7 +3,7 @@ public abstract class Combatant
     protected String name;
     protected int maxHp;
     protected int defense;
-    protected int peed;
+    protected int speed;
     protected List<StatusEffect> StatusEffect;
 
     public void takeDamage (int dmg)
