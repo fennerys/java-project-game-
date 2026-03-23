@@ -1,6 +1,6 @@
 public abstract class Combatant
 {
-    protected string name;
+    protected String name;
     protected int HP;
     protected int DEF;
     protected int SPD;
