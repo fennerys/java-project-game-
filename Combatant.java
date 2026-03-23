@@ -3,6 +3,7 @@ public abstract class Combatant
     protected String name;
     protected int maxHP;
     protected int HP;
+    protected int ATK;
     protected int DEF;
     protected int SPD;
     protected List<StatusEffect> StatusEffect;
